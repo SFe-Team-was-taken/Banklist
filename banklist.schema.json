@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/BankList",
+    "definitions": {
+        "BankList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "soundFonts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SoundFont"
+                    }
+                }
+            },
+            "required": [
+                "soundFonts"
+            ],
+            "title": "BankList"
+        },
+        "SoundFont": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "fileName": {
+                    "type": "string"
+                },
+                "gain": {
+                    "type": "integer"
+                },
+                "channels": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "patchMappings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PatchMapping"
+                    }
+                }
+            },
+            "required": [
+                "fileName"
+            ],
+            "title": "SoundFont"
+        },
+        "PatchMapping": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "source": {
+                    "$ref": "#/definitions/Destination"
+                },
+                "destination": {
+                    "$ref": "#/definitions/Destination"
+                }
+            },
+            "required": [
+                "destination"
+            ],
+            "title": "PatchMapping"
+        },
+        "Destination": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "bank": {
+                    "type": "integer"
+                },
+                "program": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "bank"
+            ],
+            "title": "Destination"
+        }
+    }
+}
