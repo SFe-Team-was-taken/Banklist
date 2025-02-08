@@ -1,0 +1,28 @@
+{
+  "soundFonts": [
+    {"fileName": "/Simple/SoundFont File.sf2"},
+    {
+      "fileName": "/Advanced/SoundFont With Mappings.sf2",
+      "gain": 6.0,
+      "channels": [1,3,5],
+      "patchMappings": [
+        {"source": {"bank": 0, "program": 1}, "destination": {"bank": 0, "program": 20}},
+        {"source": {"bank": 20, "program": 5}, "destination": {"bank": 0, "program": 5}}
+      ]
+    },
+    {
+      "fileName":  "/Another Simple/SoundFont File.sf2",
+      "patchMappings": [
+        {"destination": {"bank": 1}}
+      ]
+    },
+    {"fileName":  "/SoundFont List.sflist.json"},
+    {
+      "fileName":  "/Patch.sfz",
+      "patchMappings": [
+        {"destination": {"bank": 0, "program": 2}},
+        {"destination": {"bank": 0, "program": 3}}
+      ]
+    }
+  ]
+}
